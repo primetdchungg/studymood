@@ -1,0 +1,170 @@
+.study-note-container {
+  color: var(--second-text-color);
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  height: 33rem;
+}
+
+.input-note-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 45%;
+  box-shadow: 2px 2px 5px rgb(231, 144, 144), -2px -2px 5px rgb(171, 200, 233);
+  padding-top: 0.5rem;
+  text-align: center;
+}
+
+.input-note-container .study-note-textarea {
+  background-color: var(--bg-color);
+  width: 100%;
+}
+
+.notes-btn {
+  color: var(--second-text-color);
+  display: flex;
+  justify-content: space-around;
+}
+
+.notes-btn .study-note-btn {
+  width: 45%;
+  text-align: center;
+}
+
+.history-notes-container {
+  box-shadow: 2px 2px 5px rgb(231, 144, 144), -2px -2px 5px rgb(171, 200, 233);
+  color: var(--second-text-color);
+  width: 50%;
+  padding-top: 0.5rem;
+  height: 100%;
+  text-align: center;
+}
+
+.study-note-title {
+  text-align: center;
+  width: 100%;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.study-note-textarea {
+  width: 100%;
+  height: 90%;
+  padding: 1rem;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.study-note-btn {
+  border-radius: 0px;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.study-note-list {
+  margin-top: 1rem;
+  list-style: none;
+  padding: 0 0.5rem;
+  max-height: 27rem;
+  overflow-y: auto;
+  margin-bottom: 1rem;
+  text-align: left;
+}
+
+/* Toàn bộ thanh cuộn dọc */
+
+.study-note-list::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+/* Nền đường ray */
+
+.study-note-list::-webkit-scrollbar-track {
+  background: #f0f0f0;
+  border-radius: 4px;
+}
+
+/* Núm cuộn */
+
+.study-note-list::-webkit-scrollbar-thumb {
+  background: #fbb5b5;
+  border-radius: 4px;
+}
+
+.study-note-item {
+  color: var(--second-text-color);
+  background: var(--note-item);
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-left: 4px solid #cdedff;
+  position: relative;
+}
+
+.study-note-content {
+  margin-top: 0.5rem;
+  font-size: 1.3rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  /* Giới hạn 2 dòng */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-word;
+  /* Chia từ khi quá dài */
+}
+
+.study-note-timestamp {
+  font-size: 0.9rem;
+}
+
+.note-actions {
+  margin-top: 0.5rem;
+  display: flex;
+}
+
+.note-actions button {
+  border-radius: 0px;
+  text-align: center;
+  width: 5rem;
+  font-size: 0.8rem;
+  padding: 4px 8px;
+  margin-right: 6px;
+  cursor: pointer;
+}
+
+@media (max-width: 1024px) {
+  .study-note-container {
+    color: var(--second-text-color);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 100%;
+  }
+  .input-note-container {
+    height: 25rem;
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+  .history-notes-container {
+    width: 100%;
+    padding-top: 0.5rem;
+  }
+}
+
+@media (min-width: 1700px) {
+  .input-note-container {
+    height: 40rem;
+    margin-bottom: 2rem;
+  }
+  .history-notes-container {
+    padding-top: 0.5rem;
+    height: 40rem;
+  }
+  .study-note-list {
+    max-height: 35rem;
+  }
+}

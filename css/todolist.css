@@ -1,0 +1,177 @@
+.todolist-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  color: var(--second-text-color);
+}
+
+.todolist-column {
+  background: var(--button);
+  border-radius: 12px;
+  padding: 20px;
+  width: 32%;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+}
+
+.todolist-column h2 {
+  margin-bottom: 1rem;
+  font-size: 2rem;
+}
+
+.input-todolist {
+  display: flex;
+  width: 100%;
+  height: 2.5rem;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.input-todolist input {
+  width: 75%;
+  height: 100%;
+  border: none;
+  box-shadow: 2px 2px 5px rgb(231, 144, 144), -2px -2px 5px rgb(171, 200, 233);
+}
+
+.input-todolist button {
+  width: 22%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: none;
+  border-radius: 0px;
+}
+
+.progress-container {
+  position: relative;
+  height: 20px;
+  background-color: #bde8ff;
+  border-radius: 12px;
+  margin-bottom: 10px;
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+
+.progress-bar {
+  height: 100%;
+  width: 0%;
+  border-radius: 12px;
+  transition: width 0.3s ease-in-out;
+  border: 0.1rem solid var(--second-text-color);
+}
+
+.progress-text {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+  font-size: 1rem;
+  line-height: 20px;
+  font-weight: bold;
+  color: #333;
+}
+
+.todo-list {
+  list-style: none;
+  padding: 0;
+  max-height: 23rem;
+  /* bạn chỉnh cao phù hợp */
+  overflow-y: auto;
+  /* bật thanh cuộn khi nội dung vượt quá */
+}
+
+.todo-list li {
+  height: 2.5rem;
+  margin: 0.6rem 0;
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-content: center;
+  width: 95%;
+  font-size: 1.2rem;
+}
+
+.todo-li-p {
+  display: flex;
+  align-items: center;
+  background: var(--sky-pastel);
+  border-radius: 0.5rem;
+  border: none;
+  width: 80%;
+  height: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  /* Không xuống dòng */
+  overflow-x: auto;
+  /* Cho cuộn ngang */
+  /* Giới hạn chiều rộng */
+}
+
+.todo-li-p::-webkit-scrollbar {
+  height: 8px;
+}
+
+.todo-li-p::-webkit-scrollbar-thumb {
+  background: #fbb5b5;
+  border-radius: 4px;
+}
+
+.todo-li-p::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.todo-li-btn-done {
+  width: 8%;
+  height: 100%;
+  text-align: center;
+  cursor: pointer;
+}
+
+.todo-li-btn-delete {
+  width: 8%;
+  height: 100%;
+  text-align: center;
+  cursor: pointer;
+}
+
+.done {
+  text-decoration: line-through;
+  color: #888;
+}
+
+/* Toàn bộ thanh cuộn dọc */
+
+.todo-list::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+/* Nền đường ray */
+
+.todo-list::-webkit-scrollbar-track {
+  background: #f0f0f0;
+  border-radius: 4px;
+}
+
+/* Núm cuộn */
+
+.todo-list::-webkit-scrollbar-thumb {
+  background: #fbb5b5;
+  border-radius: 4px;
+}
+
+@media (max-width: 1024px) {
+  .todolist-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  .todolist-column {
+    margin-top: 2rem;
+    border-radius: 12px;
+    padding: 20px;
+    width: 100%;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+  }
+}

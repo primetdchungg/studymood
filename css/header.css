@@ -1,0 +1,31 @@
+.header-container1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: var(--second-text-color);
+  font-size: 1.5rem;
+}
+
+.header-container1 p {
+  width: 100%;
+  text-align: center;
+}
+
+@media (max-width: 960px) {
+  .header-container1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media (max-width: 700px) {
+  .header-container1 {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    font-size: 1.4rem;
+  }
+}

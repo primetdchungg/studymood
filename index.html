@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/layout.css" />
+    <link rel="stylesheet" href="/css/color.css" />
+    <link rel="stylesheet" href="/css/animation.css" />
+    <link rel="stylesheet" href="/css/active.css" />
+    <link rel="stylesheet" href="/css/calculator.css" />
+    <link rel="stylesheet" href="/css/hover.css">
+    <link rel="stylesheet" href="/css/note.css">
+    <link rel="stylesheet" href="/css/countdown.css">
+    <link rel="stylesheet" href="/css/pomodoro.css">
+    <link rel="stylesheet" href="/css/todolist.css">
+    <link rel="stylesheet" href="/css/music.css">
+    <link rel="stylesheet" href="/css/timer.css">
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tourney:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter&family=JetBrains+Mono&family=Poppins&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+    <header>
+        <div class="header-container1">
+            <p>🎓 Gõ cửa tri thức lần nữa, Chào mừng trở lại!</p>
+            <p>🎓 Once again, reaching for knowledge – Welcome back!</p>
+        </div>
+        <!-- music -->
+        <div class="header-container2">
+            <div class="music-player-container">
+                <div class="music-player-title">Tên bài hát - Tác giả</div>
+                <div class="music-player-controls">
+                    <button id="music-player-prev-btn">⏮</button>
+                    <button id="music-player-play-btn">▶</button>
+                    <button id="music-player-next-btn">⏭</button>
+                </div>
+                <div class="music-player-progress-container">
+                    <div class="music-player-progress-bar" id="music-player-progress-bar"></div>
+                </div>
+                <audio id="music-player-audio" preload="metadata"></audio>
+            </div>
+    </header>
+    <aside>
+        <div class="sidebar-container">
+            <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+            <ul id="menu-list">
+                <li>
+                    <button id="toggle-theme">
+              <i class="fa-solid fa-moon"></i>Chế độ tối
+            </button>
+                </li>
+                <li>
+                    <button data-target="calculator" onclick="active(this)">
+              <i class="fa-solid fa-calculator"></i>
+              Máy tính
+            </button>
+                </li>
+                <li>
+                    <button data-target="notes" onclick="active(this)">
+              <i class="fa-solid fa-square-pen"></i>Ghi chú
+            </button>
+                </li>
+                <li>
+                    <button data-target="todo-list" onclick="active(this)">
+              <i class="fa-solid fa-list-check"></i>
+              Todolist
+            </button>
+                </li>
+                <li>
+                    <button data-target="timer" onclick="active(this)">
+              <i class="fa-solid fa-clock"></i>
+              Đếm giờ học
+            </button>
+                </li>
+                <li>
+                    <button data-target="countdown-timer" onclick="active(this)">
+              <i class="fa-solid fa-hourglass-start"></i>
+              Đồng hồ đếm ngược
+            </button>
+                </li>
+                <li>
+                    <button data-target="pomodoro" onclick="active(this)">
+              <i class="fa-solid fa-brain"></i>
+              Phương pháp Pomodoro
+            </button>
+                </li>
+            </ul>
+        </div>
+    </aside>
+    <main>
+        <div class="section">
+            <!-- CALCULATOR -->
+            <section id="calculator" class="content-section">
+                <div class="calculator-content">
+                    <div class="display-calculator">
+                        <div id="math"></div>
+                        <div id="result">0</div>
+                    </div>
+                    <div id="btn-calculator">
+                        <button onclick="clearAll()" id="clearAll">C</button>
+                        <button onclick="addValue('(')">(</button>
+                        <button onclick="addValue(')')">)</button>
+                        <button onclick="addValue('+')">+</button>
+
+                        <button onclick="addValue('7')">7</button>
+                        <button onclick="addValue('8')">8</button>
+                        <button onclick="addValue('9')">9</button>
+                        <button onclick="addValue('-')">-</button>
+
+                        <button onclick="addValue('4')">4</button>
+                        <button onclick="addValue('5')">5</button>
+                        <button onclick="addValue('6')">6</button>
+                        <button onclick="addValue('*')">x</button>
+
+                        <button onclick="addValue('1')">1</button>
+                        <button onclick="addValue('2')">2</button>
+                        <button onclick="addValue('3')">3</button>
+                        <button onclick="addValue('/')">:</button>
+
+                        <button onclick="addValue('0')">0</button>
+                        <button onclick="addValue('.')">.</button>
+                        <button onclick="del()" id="DEL">DEL</button>
+                        <button onclick="equal()" id="equal-calculate">=</button>
+                    </div>
+                </div>
+
+            </section>
+            <!-- NOTES -->
+            <section id="notes" class="content-section">
+                <div class="study-note-container">
+                    <div class="input-note-container">
+                        <div class="study-note-title">Ghi chú học tập</div>
+                        <textarea class="study-note-textarea" id="study-note-input" placeholder="Nhập ghi chú của bạn..."></textarea><br />
+                        <div class="notes-btn">
+                            <button class="study-note-btn" onclick="saveNote()">Lưu ghi chú</button>
+                            <button class="study-note-btn" onclick="clearNotes()">Xoá tất cả</button>
+                        </div>
+                    </div>
+                    <div class="history-notes-container">
+                        <span class="history-note-title">Lịch sử ghi chú </span>
+                        <div class="study-note-list" id="study-note-list"></div>
+                    </div>
+                </div>
+            </section>
+            <!-- TODOLIST -->
+            <section id="todo-list" class="content-section active">
+                <div class="todolist-container">
+                    <!-- Cột Ngày -->
+                    <div class="todolist-column">
+                        <h2>Ngày</h2>
+                        <div class="progress-container">
+                            <div class="progress-bar" id="progress-day-bar"></div>
+                            <span class="progress-text" id="progress-day-text">0%</span>
+                        </div>
+                        <div class="input-todolist">
+                            <input type="text" id="input-day" placeholder="Thêm việc..." />
+                            <button onclick="addTodo('day')"><p>Thêm</p></button>
+                        </div>
+                        <ul id="day" class="todo-list"></ul>
+                    </div>
+                    <!-- Cột Tuần -->
+                    <div class="todolist-column">
+                        <h2>Tuần</h2>
+                        <div class="progress-container">
+                            <div class="progress-bar" id="progress-week-bar"></div>
+                            <span class="progress-text" id="progress-week-text">0%</span>
+                        </div>
+                        <div class="input-todolist">
+                            <input type="text" id="input-week" placeholder="Thêm việc..." />
+                            <button onclick="addTodo('week')"><p>Thêm</p></button>
+                        </div>
+                        <ul id="week" class="todo-list"></ul>
+                    </div>
+                    <!-- Cột Tháng -->
+                    <div class="todolist-column">
+                        <h2>Tháng</h2>
+                        <div class="progress-container">
+                            <div class="progress-bar" id="progress-month-bar"></div>
+                            <span class="progress-text" id="progress-month-text">0%</span>
+                        </div>
+                        <div class="input-todolist">
+                            <input type="text" id="input-month" placeholder="Thêm việc..." />
+                            <button onclick="addTodo('month')"><p>Thêm</p></button>
+                        </div>
+                        <ul id="month" class="todo-list"></ul>
+
+                    </div>
+            </section>
+            <!-- TIMER -->
+            <section id="timer" class="content-section">
+                <div class="study-timer-container">
+                    <h2>Đếm giờ học</h2>
+                    <p class="study-timer-title">Học hôm nay, thắng ngày mai <br> Kiên trì bền bỉ, chẳng ngại chông gai.
+                    </p>
+                    <div class="study-timer-display" id="study-timer-display">00:00:00</div>
+                    <div class="study-timer-buttons">
+                        <button onclick="StudyTimer.start()"><i class="fa-solid fa-play"></i>Bắt đầu </button>
+                        <button onclick="StudyTimer.stop()"><i class="fa-solid fa-flag"></i>Kết thúc</button>
+                    </div>
+                </div>
+            </section>
+            <!-- COUNTDOWN-TIMER -->
+            <section id="countdown-timer" class="content-section">
+                <div class="countdown-container">
+                    <h2>ĐỒNG HỒ ĐẾM NGƯỢC</h2>
+                    <p>Luyện đề hôm nay, điểm 10 trao tay</p>
+                    <div class="inputs-countdown">
+                        <input type="number" id="inputHours" placeholder="Hours" min="0" />
+                        <input type="number" id="inputMinutes" placeholder="Minutes" min="0" max="59" />
+                        <input type="number" id="inputSeconds" placeholder="Seconds" min="0" max="59" />
+                    </div>
+                    <div class="countdown">
+                        <span id="hours" class="tourley">00</span>
+                        <span>:</span>
+                        <span id="minutes" class="nabla">00</span>
+                        <span>:</span>
+                        <span id="seconds" class="nabla">00</span>
+                    </div>
+                    <div class="btn-countdown">
+                        <button onclick="CountdownTimer.start()"> <i class="fa-solid fa-play"></i>Bắt đầu</button>
+                        <button onclick="CountdownTimer.reset()"> <i class="fa-solid fa-flag"></i>Kết thúc</button>
+                    </div>
+
+                </div>
+            </section>
+            <!-- POMODORO -->
+            <section id="pomodoro" class="content-section">
+                <div class="pomodoro-container">
+                    <h2>POMODORO</h2>
+                    <p style="font-size: 1.5rem;">POMODORO giúp bạn tập trung cao độ và nâng cao năng suất bằng cách chia nhỏ thời gian làm việc thành các khoảng ngắn, xen kẽ với các khoảng nghỉ ngơi. 25 phút làm việc, 5 phút nghỉ ngơi.Bạn đã sẵn sàng chưa?
+                    </p>
+                    <div class="countdown">
+                        <span id="pomo-hours">00</span>
+                        <span>:</span>
+                        <span id="pomo-minutes">00</span>
+                        <span>:</span>
+                        <span id="pomo-seconds">00</span>
+                    </div>
+                    <div class="pomo-countdown">
+                        <button onclick="PomodoroTimer.start()">  <i class="fa-solid fa-play"></i>Bắt đầu</button>
+                        <button onclick="PomodoroTimer.reset()">   <i class="fa-solid fa-flag"></i>Kết thúc</button>
+                    </div>
+                </div>
+            </section>
+    </main>
+    <script src="https://kit.fontawesome.com/f37e9392fa.js" crossorigin="anonymous"></script>
+    <script src="/js/themetoggle.js"></script>
+    <script src="/js/calculator.js"></script>
+    <script src="/js/music.js"></script>
+    <script src="/js/countdown.js" defer></script>
+    <script src="/js/pomodoro.js"></script>
+    <script src="/js/note.js"></script>
+    <script src="/js/timer.js"></script>
+    <script src="/js/todolist.js"></script>
+    <script>
+        function toggleMenu() {
+            document.querySelector("#menu-list").classList.toggle("active");
+        }
+
+        const buttons = document.querySelectorAll("aside button");
+        const sections = document.querySelectorAll(".content-section");
+
+        function active(button) {
+            // Ẩn tất cả các section
+            document.querySelectorAll("main section").forEach((section) => {
+                section.classList.remove("active");
+            });
+            // Hiện section tương ứng với button
+            const target = button.getAttribute("data-target");
+            document.getElementById(target).classList.add("active");
+            // Bỏ active ở tất cả nút
+            document.querySelectorAll("button").forEach((btn) => {
+                btn.classList.remove("active");
+            });
+
+            // Gán active cho nút đang được ấn
+            button.classList.add("active");
+        }
+    </script>
+</body>
+
+</html>
