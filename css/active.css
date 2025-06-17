@@ -1,0 +1,7 @@
+.content-section {
+  display: none !important;
+}
+
+main .active {
+  display: flex !important;
+}

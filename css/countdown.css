@@ -1,0 +1,71 @@
+.countdown-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  color: var(--second-text-color);
+  justify-content: center;
+}
+
+.countdown-container h2 {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  margin-bottom: 1rem;
+  font-size: 3.2rem;
+}
+
+.countdown-container p {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+}
+
+.countdown-container .inputs-countdown {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.countdown-container .inputs-countdown input {
+  font-size: 1rem;
+  padding: 5px 0;
+  width: 5rem;
+  margin: 0.5rem;
+  border: none;
+  box-shadow: 2px 2px 5px rgb(231, 144, 144), -2px -2px 5px rgb(171, 200, 233);
+}
+
+.countdown-container .countdown {
+  width: 100%;
+  text-align: center;
+}
+
+.countdown-container .countdown span {
+  font-family: "Tourney", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 12.5rem;
+  padding: 0px;
+  color: var(--second-text-color);
+}
+
+.countdown-container .btn-countdown {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+.countdown-container .btn-countdown button {
+  text-align: center;
+  width: 10rem;
+  margin: 0.5rem;
+  border-radius: 0;
+  font-size: 1rem;
+}
+
+.countdown-container .btn-countdown button i {
+  margin-right: 0.5rem;
+}

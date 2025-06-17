@@ -1,0 +1,47 @@
+:root {
+  /* Light Mode Colors */
+  --primary-color: #b6b6a3;
+  --text-color: #222;
+  --bg-color: #ffff;
+  /* --second-bg-color: #3a4657; */
+  --second-bg-color: #ffffff;
+  --latte: #a4a48c;
+  --font-size-base: 1.6rem;
+  --button: #ffff;
+  --border-color: rgb(167, 167, 167);
+  --second-text-color: #4a573a;
+  --linear-bg: linear-gradient(
+    to right,
+    rgb(219, 234, 255),
+    rgb(253, 252, 255),
+    rgb(249, 216, 216)
+  );
+  --calculator-display: #ffff;
+  --hover: linear-gradient(
+    to right,
+    rgb(219, 234, 255),
+    rgb(253, 252, 255),
+    rgb(249, 216, 216)
+  );
+  --sky-pastel: #bde8ff;
+  --note-item: #ececec;
+}
+
+/* Dark Mode Colors */
+
+.dark-mode {
+  --second-bg-color: var(--button);
+  --linear-bg: #505050;
+  --primary-color: #eae6d8;
+  --text-color: #f4f4e1;
+  --second-text-color: #ffffff;
+  --bg-color: #505050;
+  --latte: #777a6f;
+  --second-bg-color: #444e37;
+  --button: #505050;
+  --border-color: #a4a48c;
+  --calculator-display: #cccccc;
+  --hover: #cccccc;
+  --sky-pastel: #cccccc;
+  --note-item: #505050;
+}
