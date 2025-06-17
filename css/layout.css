@@ -6,12 +6,11 @@
 
 body {
   background-color: var(--bg-color);
-  font-family: "Inter", sans-serif;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 }
 
 body {
-  font-weight: 600;
-  font-family: "Courier New", monospace;
+  font-weight: 500;
   font-size: var(--font-size-base);
   color: var(--text-color);
   height: 100vh;
@@ -189,5 +188,15 @@ button {
 @media (max-width: 570px) {
   html {
     font-size: 50%;
+  }
+}
+
+@media (max-width: 450px) {
+  html {
+    font-size: 40%;
+  }
+  button {
+    font-size: 8px;
+    box-shadow: 1px 1px 1px rgb(231, 144, 144), -1px -1px 1px rgb(171, 200, 233);
   }
 }

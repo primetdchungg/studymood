@@ -5,6 +5,7 @@
   align-items: center;
   color: var(--second-text-color);
   font-size: 1.5rem;
+  font-weight: 600;
 }
 
 .header-container1 p {
